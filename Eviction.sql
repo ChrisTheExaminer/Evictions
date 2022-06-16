@@ -93,19 +93,20 @@ GROUP BY BOROUGH, [Residential/Commercial], [Eviction/Legal Possession];
 
 -- Numbber of evictions over the time
 
-SELECT [Eviction/Legal Possession], [Executed Date], 
+SELECT [BOROUGH], [Executed Date], 
 COUNT([Eviction/Legal Possession]) [Number of Evictions/date]
 FROM Evictions$ 
 WHERE [Eviction/Legal Possession] = 'Eviction'
-GROUP BY  [Eviction/Legal Possession], [Executed Date];
+GROUP BY  [BOROUGH], [Executed Date]
+ORDER BY 2;
 
 -- Number of possessions over the time.
 
-SELECT [Eviction/Legal Possession], [Executed Date], 
+SELECT [BOROUGH], [Executed Date], 
 COUNT([Eviction/Legal Possession]) [Number of Possession/date]
 FROM Evictions$ 
 WHERE [Eviction/Legal Possession] = 'Possession'
-GROUP BY  [Eviction/Legal Possession], [Executed Date];
+GROUP BY [BOROUGH], [Executed Date];
 
 
 
