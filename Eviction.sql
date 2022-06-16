@@ -91,7 +91,21 @@ FROM Evictions$
 WHERE [Eviction/Legal Possession] = 'Eviction' AND [Residential/Commercial] = 'Commercial'
 GROUP BY BOROUGH, [Residential/Commercial], [Eviction/Legal Possession];
 
+-- Numbber of evictions over the time
 
+SELECT [Eviction/Legal Possession], [Executed Date], 
+COUNT([Eviction/Legal Possession]) [Number of Evictions/date]
+FROM Evictions$ 
+WHERE [Eviction/Legal Possession] = 'Eviction'
+GROUP BY  [Eviction/Legal Possession], [Executed Date];
+
+-- Number of possessions over the time.
+
+SELECT [Eviction/Legal Possession], [Executed Date], 
+COUNT([Eviction/Legal Possession]) [Number of Possession/date]
+FROM Evictions$ 
+WHERE [Eviction/Legal Possession] = 'Possession'
+GROUP BY  [Eviction/Legal Possession], [Executed Date];
 
 
 
